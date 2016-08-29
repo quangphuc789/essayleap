@@ -23,6 +23,8 @@
             cell.innerHTML = topics[i].star;
             var cell = row.insertCell(-1);
             cell.innerHTML = topics[i].timestamp;
+            var cell = row.insertCell(-1);
+            cell.innerHTML = '<a href="topic.php?id=' + topics[i].id + '">VIEW</a>';
         }
     }
 })();
