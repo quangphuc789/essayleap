@@ -17,7 +17,18 @@
         <div>
             <h3>Popular topics</h3>
 
-            <div id='popular-topics'></div>
+            <div id='popular-topics'>
+                <table id='popular-table'>
+                    <tr>
+                        <th>Category</th>
+                        <th>Exam</th>
+                        <th>Text</th>
+                        <th>Star</th>
+                        <th>Tags</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </table>
+            </div>
         </div>
     </body>
 
