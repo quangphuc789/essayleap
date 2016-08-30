@@ -6,6 +6,8 @@
     </head>
 
     <body>
+        <div id='overlay-back'></div>
+        <div id='overlay'></div>
         <h1>Topic <?=$_GET['id']?></h1>
 
         <div id='intro-topic'>

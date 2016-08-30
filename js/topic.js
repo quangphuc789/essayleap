@@ -4,10 +4,12 @@ function getTopicInfo(id) {
 
         success: function(result, status, xhr) {
             displayTopicContent(result);
+            console.log('ddd');
         }
     });
 
     function displayTopicContent(content) {
+        console.log(content);
         displayTopicIntroduction(content.topic);
         displayEssays(content.essay);
     }
@@ -22,7 +24,7 @@ function getTopicInfo(id) {
                 document.getElementById('exam').innerHTML = content.exam;
             }
             if (content.text != null) {
-                document.getElementById('text').innerHTML = content.text;
+                document.getElementById('text').innerHTML = '<b>'+content.text+'</b>';
             }
             if (content.star != null) {
                 document.getElementById('star').innerHTML = content.star;
@@ -48,14 +50,30 @@ function getTopicInfo(id) {
         for (var i = 0; i < data.length; i++) {
             var item = data[i];
             var essay = addDOM('div', list, null, null, 'essay-item');
-            addDOM('div', essay, item.text.substring(0, 100) + '... ', null, 'essay-item-text');
+            addDOM('div', essay, '\"'+item.text.substring(0, 150) + '... \"', null, 'essay-item-text');
             addDOM('div', essay, 'Author: '+item.author);
             addDOM('div', essay, 'Word Count: '+item.word_count);
             addDOM('div', essay, 'Upvote: '+item.upvote);
             addDOM('div', essay, 'Downvote: '+item.downvote);
             addDOM('div', essay, 'Duration: '+item.duration);
             addDOM('div', essay, 'Submitted Time: '+item.timestamp);
+
+            essay.onclick = function() {
+                open();
+            }
         }
+    }
+
+    function open() {
+        document.getElementById("overlay-back").style.display = "block";
+        document.getElementById("overlay").style.visibility = "visible";
+        document.getElementById("overlay").style.opacity = 1;
+        document.getElementById("overlay").style.zIndex = 5;
+    }
+    function close() {
+        document.getElementById("overlay").style.opacity = 1;
+        document.getElementById("overlay").style.visibility = "visible";
+        document.getElementById("overlay").style.zIndex = -1;
     }
 }
 
