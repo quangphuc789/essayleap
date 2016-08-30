@@ -14,6 +14,8 @@ function getTopicInfo(id) {
 
     function displayTopicIntroduction(data) {
         console.log(data);
+        var topic = document.getElementById('intro-topic');
+        addDOM('div', topic, 'ss');
     }
 
     function displayEssays(data) {
