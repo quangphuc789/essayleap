@@ -18,5 +18,5 @@ if (isset($_GET['id'])) {
         'topic' => $topic,
         'essay' => $essay
         );
-    echo serialize($array);
+    send($array);
 }
