@@ -30,6 +30,11 @@
                         <th>Timestamp</th>
                         <td id='timestamp'></td>
                     </tr>
+                    <tr>
+                        <td id='write'>
+                            <button class="btn btn-default" onclick='attemptEssay()'>WRITE</button>
+                        </td>
+                    </tr>
                 </table>
                 <div id='text'></div>
             </div>
@@ -45,6 +50,7 @@
             <div id='essay-title'></div>
             <div>
                 <div id='essay-content'></div>
+                <div id='essay-info'></div>
                 <div id='essay-comment'</div>
             </div>
         </div>

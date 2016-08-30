@@ -58,28 +58,38 @@ function getTopicInfo(id) {
 
             essay.onclick = function() {
                 openOverlay();
-
                 populateEssay();
             }
         }
 
         function populateEssay() {
-            console.log(item.text);
             document.getElementById('essay-title').innerHTML = 
                 document.getElementById('text').innerHTML;
-            document.getElementById('essay-content').innerHTML = item.text.replace(/\n/g, '<br>');
+            document.getElementById('essay-content').innerHTML = item.text.replace(/\n/g, '<br>')+item.text.replace(/\n/g, '<br>');
         }
     }
+}
 
-    function openOverlay() {
-        document.getElementById("overlay-back").style.display = "block";
-        document.getElementById("overlay").style.display = "block";
-        document.getElementById("overlay").style.opacity = 1;
-    }
+function openOverlay() {
+    document.getElementById("overlay-back").style.display = "block";
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("overlay").style.opacity = 1;
 }
 
 function closeOverlay() {
     document.getElementById("overlay-back").style.display = "none";
     document.getElementById("overlay").style.display = "none";
+    document.getElementById('essay-content').innerHTML = '';
+    document.getElementById('essay-content').contentEditable = false;
 }
 
+function attemptEssay() {
+    openOverlay();
+    document.getElementById('essay-title').innerHTML = 
+        document.getElementById('text').innerHTML;
+
+    var edit = document.getElementById('essay-content');
+    edit.innerHTML = '';
+    edit.contentEditable = true;
+    edit.style.minHeight = '50%';
+}
