@@ -4,12 +4,10 @@ function getTopicInfo(id) {
 
         success: function(result, status, xhr) {
             displayTopicContent(result);
-            console.log('ddd');
         }
     });
 
     function displayTopicContent(content) {
-        console.log(content);
         displayTopicIntroduction(content.topic);
         displayEssays(content.essay);
     }
@@ -59,21 +57,29 @@ function getTopicInfo(id) {
             addDOM('div', essay, 'Submitted Time: '+item.timestamp);
 
             essay.onclick = function() {
-                open();
+                openOverlay();
+
+                populateEssay();
             }
+        }
+
+        function populateEssay() {
+            console.log(item.text);
+            document.getElementById('essay-title').innerHTML = 
+                document.getElementById('text').innerHTML;
+            document.getElementById('essay-content').innerHTML = item.text.replace(/\n/g, '<br>');
         }
     }
 
-    function open() {
+    function openOverlay() {
         document.getElementById("overlay-back").style.display = "block";
-        document.getElementById("overlay").style.visibility = "visible";
+        document.getElementById("overlay").style.display = "block";
         document.getElementById("overlay").style.opacity = 1;
-        document.getElementById("overlay").style.zIndex = 5;
     }
-    function close() {
-        document.getElementById("overlay").style.opacity = 1;
-        document.getElementById("overlay").style.visibility = "visible";
-        document.getElementById("overlay").style.zIndex = -1;
-    }
+}
+
+function closeOverlay() {
+    document.getElementById("overlay-back").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
 }
 
