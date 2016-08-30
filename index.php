@@ -5,9 +5,9 @@
 
 
     <body>
-        <h1>Welcome to Essay Leap!</h1>
+        <h1>Welcome to ESME!</h1>
 
-        <p>Essay Leap is the Community Learning Platform for English learners to write, learn and share.
+        <p>ESME is the Community Learning Platform for English learners to write, learn and share.
             <br>
             You can find or create a topic you love, write your essay and get it reviewed by the community!
             <br>
