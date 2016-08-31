@@ -14,6 +14,20 @@
             This way, we can share and learn from each other. Enjoy!
         </p>
 
+        <table>
+            <tr>
+                <th>Email</th>
+                <td><input id='email'/></td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td><input id='password'/></td>
+            </tr>
+            <tr>
+                <td><button onclick="login()">Submit</button></td>
+            </tr>
+        </table>
+
         <div>
             <h3>Popular topics</h3>
 
@@ -33,4 +47,5 @@
     </body>
 
     <script src='js/index.js'></script>
+    <script src='js/adhoc.js'></script>
 </html>
