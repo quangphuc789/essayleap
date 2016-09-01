@@ -24,7 +24,7 @@ function login() {
             data: "email="+email+"&password="+password,
             success: function(result, status, xhr) {
                 console.log(result);
-            }
+            },
         });
     }
 }
