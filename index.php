@@ -14,19 +14,24 @@
             This way, we can share and learn from each other. Enjoy!
         </p>
 
-        <table>
-            <tr>
-                <th>Email</th>
-                <td><input id='email'/></td>
-            </tr>
-            <tr>
-                <th>Password</th>
-                <td><input id='password'/></td>
-            </tr>
-            <tr>
-                <td><button onclick="login()">Submit</button></td>
-            </tr>
-        </table>
+        <?php
+            require('backend/db/sql.php');
+            if (isset($_COOKIE['id'])) {
+                $id = $_COOKIE['id'];
+                $sql = new Sql();
+                $objs = $sql->query("SELECT * FROM session WHERE id = '$id' LIMIT 1");
+                if (count($objs) > 0) {
+                    $obj = $objs[0];
+                    $expiry = intval($obj['expiry']);
+                    if ($obj['expiry']-time() > 0) {
+                        $GLOBALS['name'] = 'Phuc2';
+                        require('userinfo.php');
+                    } else {
+                        require('login.php');
+                    }
+                }
+            }
+        ?>
 
         <div>
             <h3>Popular topics</h3>

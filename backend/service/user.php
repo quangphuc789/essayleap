@@ -14,7 +14,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         if (md5($_POST['password']) == $hashpw) {
             // Set cookie
             $expiry = time() + (86400 * 30);
-            // setcookie($cookie_name, $cookie_value, $expiry, "/"); // 86400 = 1 day
+            setcookie('id', $id, $expiry, "/"); // 86400 = 1 day
 
             // Set session
             $sql->query("INSERT into session values ('$id', '$expiry', '1') 
