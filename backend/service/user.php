@@ -42,6 +42,7 @@ if (isset($_GET['type']) && $_GET['type']=='signup' && isset($_POST['info'])) {
     $dob = $info->dob[0];
     $language = $info->lastname[0];
     $password = md5($info->password[0]);
+    $token = md5(rand(1000).time());
 
     $sql = new Sql();
     $obj = $sql->query("SELECT * FROM user WHERE email = '$email' LIMIT 1");
@@ -50,20 +51,30 @@ if (isset($_GET['type']) && $_GET['type']=='signup' && isset($_POST['info'])) {
     } else {
         // Create new user
         $sql->query("INSERT into user 
-            values ('', '$email', '$password', '', '', '', '', '', '', '0', '$lastname', '$firstname', 'sda', '$language', '$country', '$dob', '', '', '')");
+            values ('', '$email', '$password', '', '', '', '', '', '1', '$token', '$lastname', '$firstname', 'sda', '$language', '$country', '$dob', '', '', '')");
         send('ok');
 
         // Prepare email
         require('../modules/esmemailer.php');
 
+        $link = $_SERVER['HTTP_HOST']."/esme/backend/service/user.php?type=verify&token=$token";
+
         $mail = new ESMEMailer();
         $mail->send(
         array(
             'to_email' => $email,
-            'msg' => "Hello from ESME, please verify your account by clicking this link",
+            'msg' => "Hello from ESME,<br>
+            Please verify your account by clicking this <a href='$link'>$link</a>",
             'subject' => 'ESME account activation',
             'from_title' => 'ESME',
             )
         );
     }
+}
+
+if (isset($_GET['type']) && $_GET['type']=='verify' && isset($_GET['token'])) {
+    $sql = new Sql();
+    $token = $_GET['token'];
+    $obj = $sql->query("UPDATE user SET status='1' WHERE status = '$token'");
+    echo 'Congratulations, you have activated your account.';
 }
