@@ -19,7 +19,7 @@ function login() {
         alert('Please enter email & password');
     } else {
         $.ajax({
-            url: "backend/service/user.php",
+            url: "backend/service/user.php?type=login",
             type: "POST",
             data: "email="+email+"&password="+password,
             success: function(result, status, xhr) {

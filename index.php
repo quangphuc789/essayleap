@@ -29,7 +29,11 @@
                     } else {
                         require('login.php');
                     }
+                } else {
+                    require('login.php');
                 }
+            } else {
+                require('login.php');
             }
         ?>
 

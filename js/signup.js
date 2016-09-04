@@ -39,7 +39,15 @@ function submitSignup() {
                     document.getElementById('confirmedpassword').parentNode.style.border
                         = '1px solid red';
                 } else {
-                    console.log('OK I am fine');
+                    $.ajax({
+                        url: "backend/service/user.php?type=signup",
+                        type: "POST",
+                        data: "info="+JSON.stringify(info),
+                        success: function(result, status, xhr) {
+                            console.log(result);
+                        }
+                    });
+                    // Ajax
                 }
             } else {
                 document.getElementById('email').parentNode.style.border = '1px solid red';
