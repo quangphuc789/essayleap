@@ -2,6 +2,10 @@
 require_once $_SERVER['DOCUMENT_ROOT'].'/esme/backend/db/sql.php';
 
 function isLogged() {
+    if (isset($GLOBALS['name'])) {
+        return true;
+    }
+
     if (isset($_COOKIE['id'])) {
         $id = $_COOKIE['id'];
         $sql = new Sql();

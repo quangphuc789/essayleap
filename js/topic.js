@@ -92,4 +92,6 @@ function attemptEssay() {
     edit.innerHTML = '';
     edit.contentEditable = true;
     edit.style.minHeight = '50%';
+
+    var info = document.getElementById('essay-info');
 }

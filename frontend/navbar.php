@@ -41,7 +41,15 @@
         <li><a href="#">About Us</a></li>
         <li><a href="#">Terms of Use</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Options <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <?php 
+                if(isLogged()) {
+                    echo $GLOBALS['name'];
+                } else {
+                    echo 'Guest';
+                }
+            ?>
+            <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Settings</a></li>
             <li><a href="#">My Accounts</a></li>
