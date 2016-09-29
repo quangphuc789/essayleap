@@ -19,3 +19,8 @@ if (isset($_GET['id'])) {
         );
     send($array);
 }
+
+if (isset($_GET['submit'])) {
+    $data = $_POST;
+    send($data);
+}
