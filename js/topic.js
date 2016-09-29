@@ -47,14 +47,14 @@ function getTopicInfo(id) {
         var list = document.getElementById('essay-list');
         for (var i = 0; i < data.length; i++) {
             var item = data[i];
-            var essay = create_element('div', list, null, null, 'essay-item');
-            create_element('div', essay, '\"'+item.text.substring(0, 150) + '... \"', null, 'essay-item-text');
-            create_element('div', essay, 'Author: '+item.author);
-            create_element('div', essay, 'Word Count: '+item.word_count);
-            create_element('div', essay, 'Upvote: '+item.upvote);
-            create_element('div', essay, 'Downvote: '+item.downvote);
-            create_element('div', essay, 'Duration: '+item.duration);
-            create_element('div', essay, 'Submitted Time: '+item.timestamp);
+            var essay = create_element('div', null, 'essay-item', '', list);
+            create_element('div', null, 'essay-item-text', '\"'+item.text.substring(0, 150) + '... \"', essay);
+            create_element('div', null, null, 'Author: '+item.author, essay);
+            create_element('div', null, null, 'Word Count: '+item.word_count, essay);
+            create_element('div', null, null, 'Upvote: '+item.upvote, essay);
+            create_element('div', null, null, 'Downvote: '+item.downvote, essay);
+            create_element('div', null, null, 'Duration: '+item.duration, essay);
+            create_element('div', null, null, 'Submitted Time: '+item.timestamp, essay);
 
             essay.onclick = function() {
                 openOverlay();
@@ -94,4 +94,7 @@ function attemptEssay() {
     edit.style.minHeight = '50%';
 
     var info = document.getElementById('essay-info');
+    console.log(info);
+    var submit = create_element('button', null, 'btn btn-default', 'Submit', info);
 }
+

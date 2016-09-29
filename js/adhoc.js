@@ -1,4 +1,4 @@
-function create_element(dom, parent, html, id, className) {
+function create_element(dom, id, className, html, parent) {
     if (dom != null) {
         var element = document.createElement(dom);
         if (id != null) element.id = id;
