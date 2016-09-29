@@ -16,7 +16,7 @@ function isLogged() {
                     // Set global name
                     $GLOBALS['name'] = $user[0]['firstname'];
                     // Update session expiry
-                    // $sql->query("UPDATE session SET expiry='".time()."' WHERE id = '$id'");
+                    $sql->query("UPDATE session SET expiry='".(time() + (86400 * 30))."' WHERE id = '$id'");
 
                     return true;
                 } else {
