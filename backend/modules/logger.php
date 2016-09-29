@@ -10,9 +10,18 @@ function isLogged() {
             $obj = $objs[0];
             $expiry = intval($obj['expiry']);
             if ($obj['expiry']-time() > 0) {
-                print_r($obj);
-                $GLOBALS['name'] = 'Phuc2';
-                // require('userinfo.php');
+                $user_id = $obj['id'];
+                $user = $sql->query("SELECT * FROM user WHERE id = '$user_id' LIMIT 1");
+                if (count($user) > 0) {
+                    // Set global name
+                    $GLOBALS['name'] = $user[0]['firstname'];
+                    // Update session expiry
+                    // $sql->query("UPDATE session SET expiry='".time()."' WHERE id = '$id'");
+
+                    return true;
+                } else {
+                    return false;
+                }
             } else {
                 return false;
             }
