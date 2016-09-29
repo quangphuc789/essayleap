@@ -1,0 +1,1 @@
+<h1>Hello <?php echo $GLOBALS['name'] ?>, welcome back! </h1>

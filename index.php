@@ -8,18 +8,14 @@
 
 
     <body>
-        <?php include('frontend/navbar.php') ?>
-        <h1>Welcome to ESME!</h1>
-
-        <p>ESME is the Community Learning Platform for English learners to write, learn and share.
-            <br>
-            You can find or create a topic you love, write your essay and get it reviewed by the community!
-            <br>
-            This way, we can share and learn from each other. Enjoy!
-        </p>
-
         <?php
-            require('backend/modules/logger.php');
+            include('frontend/navbar.php');
+            include('backend/modules/logger.php');
+            if (isLogged()) {
+                include('frontend/welcomeBack.php');
+            } else {
+                include('frontend/welcome.php');
+            }
         ?>
 
         <div>
@@ -32,7 +28,7 @@
                         <th>Exam</th>
                         <th>Text</th>
                         <th>Star</th>
-                        <th>Tags</th>
+                        <!-- <th>Tags</th> -->
                         <th>Timestamp</th>
                     </tr>
                 </table>

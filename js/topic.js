@@ -47,14 +47,14 @@ function getTopicInfo(id) {
         var list = document.getElementById('essay-list');
         for (var i = 0; i < data.length; i++) {
             var item = data[i];
-            var essay = addDOM('div', list, null, null, 'essay-item');
-            addDOM('div', essay, '\"'+item.text.substring(0, 150) + '... \"', null, 'essay-item-text');
-            addDOM('div', essay, 'Author: '+item.author);
-            addDOM('div', essay, 'Word Count: '+item.word_count);
-            addDOM('div', essay, 'Upvote: '+item.upvote);
-            addDOM('div', essay, 'Downvote: '+item.downvote);
-            addDOM('div', essay, 'Duration: '+item.duration);
-            addDOM('div', essay, 'Submitted Time: '+item.timestamp);
+            var essay = create_element('div', list, null, null, 'essay-item');
+            create_element('div', essay, '\"'+item.text.substring(0, 150) + '... \"', null, 'essay-item-text');
+            create_element('div', essay, 'Author: '+item.author);
+            create_element('div', essay, 'Word Count: '+item.word_count);
+            create_element('div', essay, 'Upvote: '+item.upvote);
+            create_element('div', essay, 'Downvote: '+item.downvote);
+            create_element('div', essay, 'Duration: '+item.duration);
+            create_element('div', essay, 'Submitted Time: '+item.timestamp);
 
             essay.onclick = function() {
                 openOverlay();
