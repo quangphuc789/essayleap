@@ -2,7 +2,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'].'/esme/backend/db/sql.php';
 
 function isLogged() {
-    if (isset($GLOBALS['name'])) {
+    if (isset($GLOBALS['firstname']) && isset($GLOBALS['lastname']) && isset($GLOBALS['id'])) {
         return true;
     }
 
@@ -18,8 +18,9 @@ function isLogged() {
                 $user = $sql->query("SELECT * FROM user WHERE id = '$user_id' LIMIT 1");
                 if (count($user) > 0) {
                     // Set global name
-                    $GLOBALS['name'] = $user[0]['firstname'];
+                    $GLOBALS['firstname'] = $user[0]['firstname'];
                     $GLOBALS['lastname'] = $user[0]['lastname'];
+                    $GLOBALS['id'] = $user[0]['id'];
 
                     // Update session expiry
                     $sql->query("UPDATE session SET expiry='".(time() + (86400 * 30))."' WHERE id = '$id'");

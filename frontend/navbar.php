@@ -44,7 +44,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <?php 
                 if(isLogged()) {
-                    echo $GLOBALS['name'];
+                    echo $GLOBALS['firstname'];
                 } else {
                     echo 'Guest';
                 }

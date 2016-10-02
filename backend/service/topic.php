@@ -21,6 +21,20 @@ if (isset($_GET['id'])) {
 }
 
 if (isset($_GET['submit'])) {
-    $data = $_POST;
-    send($data);
+    require('../modules/logger.php');
+    if (isLogged()) {
+        $data = $_POST;
+        $content = $data['content'];
+        $id = $data['id'];
+        $time = time();
+        $author = $GLOBALS['id'];
+
+        $sql = new Sql();
+        $res = $sql->query("INSERT into essay 
+            values ('', '$id', '$content', '', '', '$time', '0', '0', '$author', '')");
+        send($res);
+    } else {
+        send("please log in");
+    }
+        
 }

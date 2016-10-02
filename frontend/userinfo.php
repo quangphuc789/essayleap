@@ -1,1 +1,1 @@
-<?php echo 'Hi '.$GLOBALS['name'];;
+<?php echo 'Hi '.$GLOBALS['firstname'];;

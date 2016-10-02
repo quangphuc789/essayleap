@@ -83,7 +83,7 @@ function closeOverlay() {
     document.getElementById('essay-content').contentEditable = false;
 }
 
-function attemptEssay() {
+function attemptEssay(id) {
     openOverlay();
     document.getElementById('essay-title').innerHTML = 
         document.getElementById('text').innerHTML;
@@ -98,7 +98,7 @@ function attemptEssay() {
     var submit = create_element('button', null, 'btn btn-default', 'Submit', info);
     submit.onclick = function() {
         var content = document.getElementById('essay-content').innerHTML;
-        var compressed_data = 'content='+JSON.stringify(content);
+        var compressed_data = 'id='+id+'&content='+content;
         $.ajax({
             url: "backend/service/topic.php?submit=1",
             type: "POST",
