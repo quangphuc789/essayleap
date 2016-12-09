@@ -1,1 +1,1 @@
-<h1>Hello <?php echo $GLOBALS['firstname'] ?>, welcome back! </h1>
+<h4>Hi <?php echo $GLOBALS['firstname'] ?>, welcome back! </h4>

@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-require_once $_SERVER['DOCUMENT_ROOT'].'/esme/backend/vendor/swiftmailer/lib/swift_required.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/schoolmailer/backend/vendor/swiftmailer/lib/swift_required.php';
 // require('../vendor/test33.php');
 // require("../test44.php");
 // echo $_SERVER['DOCUMENT_ROOT'];

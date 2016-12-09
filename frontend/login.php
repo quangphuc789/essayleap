@@ -10,7 +10,7 @@
     </tr>
     <tr>
         <td><button onclick="login()">Submit</button></td>
-        <td><a href="signup.php">Sign up</a></td>
+        <!-- <td><a href="signup.php">Sign up</a></td> -->
     </tr>
 </table>
 <div id="login-result"></div>

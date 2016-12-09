@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/esme/backend/db/sql.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/schoolmailer/backend/db/sql.php';
 
 function isLogged() {
     if (isset($GLOBALS['firstname']) && isset($GLOBALS['lastname']) && isset($GLOBALS['id'])) {

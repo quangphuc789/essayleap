@@ -1,1 +1,1 @@
-{"virtualbox":{"/var/www/html/esme":{"guestpath":"/var/www/html/esme","hostpath":"/Users/quangphuc789/Work/esme","disabled":false}}}
+{"virtualbox":{"/var/www/html/esme":{"guestpath":"/var/www/html/esme","hostpath":"/Users/quangphuc789/github/esme","disabled":false},"/var/www/html/schoolmailer":{"guestpath":"/var/www/html/schoolmailer","hostpath":"/Users/quangphuc789/github/schoolmailer","disabled":false}}}

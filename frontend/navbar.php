@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">ESME</a>
+      <a class="navbar-brand" href="#">School Mailer</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -36,10 +36,10 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form> -->
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Topics</a></li>
+        <!-- <li><a href="#">Topics</a></li>
         <li><a href="#">English Blog</a></li>
         <li><a href="#">About Us</a></li>
-        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Terms of Use</a></li> -->
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <?php 
@@ -52,7 +52,7 @@
             <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Settings</a></li>
-            <li><a href="#">My Accounts</a></li>
+            <!-- <li><a href="#">My Accounts</a></li> -->
             <li role="separator" class="divider"></li>
             <li><a href="#">Logout</a></li>
           </ul>
